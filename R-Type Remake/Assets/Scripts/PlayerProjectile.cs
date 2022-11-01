@@ -71,7 +71,6 @@ public class PlayerProjectile : MonoBehaviour
             Destroy(gameObject);
             power = power - 1;
             // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            // Player Dies
         }
 
     }
