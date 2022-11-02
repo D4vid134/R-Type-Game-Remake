@@ -71,6 +71,11 @@ public class PlayerProjectile : MonoBehaviour
             EnemyHealth health = collision.gameObject.GetComponent<EnemyHealth>();
             health.takeDamage(damage);
             // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+            if (damage == 1)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
     }
