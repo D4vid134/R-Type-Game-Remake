@@ -11,7 +11,7 @@ public class EnemyShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = Random.Range(1f, 7.0f);
+        timer = Random.Range(2f, 7.0f);
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class EnemyShoot : MonoBehaviour
         if (timer <= 0) 
         {
             enemyProjectile = Instantiate(enemyProjectile, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-            timer = Random.Range(1f, 7.0f);
+            timer = Random.Range(2f, 7.0f);
         }
 
     }
