@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
 
-    [SerializeField] int power;
+    [SerializeField] int power = 1;
 
     //void Fire1()
     //{
@@ -68,8 +68,8 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
-            power = power - 1;
+            EnemyHealth health = collision.gameObject.GetComponent<EnemyHealth>();
+            health.takeDamage(power);
             // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         }
 
