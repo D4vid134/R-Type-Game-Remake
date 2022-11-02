@@ -6,6 +6,9 @@ public class EnemyHealth : MonoBehaviour
 {   
     [SerializeField]
     public int health = 100;
+
+    public float destroyTimer = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,4 +28,14 @@ public class EnemyHealth : MonoBehaviour
     {
         health = health - damage;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BackBorder"))
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
 }

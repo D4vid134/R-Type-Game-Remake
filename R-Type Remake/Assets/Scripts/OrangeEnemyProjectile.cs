@@ -15,20 +15,22 @@ public class OrangeEnemyProjectile : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         if (player)
             currentPlayerPos = player.transform.position;
-        speed = 2 * Time.deltaTime;
+        speed = 20 * Time.deltaTime;
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce((currentPlayerPos - transform.position).normalized * 150);
     }
 
     // Update is called once per frame
     void FixedUpdate()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, currentPlayerPos, speed);
+    {   
+        // bulletInstance.velocity = new Vector2(shootDirection.x * speed, shootDirection.y * speed);
+        // transform.position = Vector3.MoveTowards(transform.position, currentPlayerPos, speed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
             // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             // Player Dies
         }
