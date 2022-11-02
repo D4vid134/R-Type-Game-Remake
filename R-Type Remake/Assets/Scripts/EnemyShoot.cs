@@ -11,7 +11,7 @@ public class EnemyShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = Random.Range(1f, 10.0f);
+        timer = Random.Range(1f, 9.0f);
     }
 
     // Update is called once per frame
