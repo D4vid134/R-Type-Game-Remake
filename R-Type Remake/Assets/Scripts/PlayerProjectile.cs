@@ -78,5 +78,14 @@ public class PlayerProjectile : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.CompareTag("Structure"))
+        {
+            Destroy(this.gameObject);
+        }
+
     }
+
+    void OnBecameInvisible() {
+         Destroy(this.gameObject);
+     }
 }

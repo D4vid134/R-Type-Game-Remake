@@ -17,6 +17,7 @@ public class OrangeEnemyProjectile : MonoBehaviour
             currentPlayerPos = player.transform.position;
         speed = 20 * Time.deltaTime;
         this.gameObject.GetComponent<Rigidbody2D>().AddForce((currentPlayerPos - transform.position).normalized * 150);
+        // this.gameObject.GetComponent<Rigidbody2D>().velocity = this.gameObject.GetComponent<Rigidbody2D>().velocity + new Vector2(1, 0f);
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class OrangeEnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Structure"))
         {
             Destroy(collision.gameObject);
             // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
@@ -36,4 +37,8 @@ public class OrangeEnemyProjectile : MonoBehaviour
         }
 
     }
+
+    void OnBecameInvisible() {
+         Destroy(this.gameObject);
+     }
 }
