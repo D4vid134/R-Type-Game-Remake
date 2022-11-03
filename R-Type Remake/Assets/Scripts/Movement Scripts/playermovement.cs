@@ -12,6 +12,7 @@ public class playermovement : MonoBehaviour
     public Rigidbody2D maxChargeBullet;
 
     float movespeed = 5f;
+    float constantspeed = 1f;
     float speedlimiter = .7f;
     float inputHorizontal;
     float inputVertical;
@@ -80,11 +81,11 @@ public class playermovement : MonoBehaviour
                 inputVertical *= speedlimiter;
             }
 
-            rb.velocity = new Vector2(inputHorizontal * movespeed, inputVertical * movespeed);
+            rb.velocity = new Vector2((inputHorizontal * movespeed) + constantspeed, inputVertical * movespeed);
         }
         else
         {
-            rb.velocity = new Vector2(0f, 0f);
+            rb.velocity = new Vector2(constantspeed, 0f);
         }
 	}
 
