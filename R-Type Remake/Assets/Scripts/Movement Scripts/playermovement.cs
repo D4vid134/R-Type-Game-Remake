@@ -6,7 +6,7 @@ public class playermovement : MonoBehaviour
 {
     Rigidbody2D rb;
     float movespeed = 5f;
-    float constantspeed = 1f;
+    float constantspeed = 2f;
     float speedlimiter = .7f;
     float inputHorizontal;
     float inputVertical;
