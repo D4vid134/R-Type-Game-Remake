@@ -7,51 +7,6 @@ public class PlayerProjectile : MonoBehaviour
 
     [SerializeField] int damage = 1;
 
-    //void Fire1()
-    //{
-    //    Rigidbody2D playerProjectile = Instantiate(playerProjectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-
-    //    playerProjectile.GetComponent<Rigidbody2D>().AddForce(transform.right * projectileSpeed);
-
-    //    coolDown = Time.time + attackSpeed;
-    //}
-
-    //void Fire2()
-    //{
-    //    Rigidbody2D playerProjectile = Instantiate(playerProjectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-
-    //    playerProjectile.GetComponent<Rigidbody2D>().AddForce(transform.right * projectileSpeed);
-
-    //    coolDown = Time.time + attackSpeed;
-    //}
-
-    //void Fire3()
-    //{
-    //    Rigidbody2D playerProjectile = Instantiate(playerProjectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-
-    //    playerProjectile.GetComponent<Rigidbody2D>().AddForce(transform.right * projectileSpeed);
-
-    //    coolDown = Time.time + attackSpeed;
-    //}
-
-    //void Fire4()
-    //{
-    //    Rigidbody2D playerProjectile = Instantiate(playerProjectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-
-    //    playerProjectile.GetComponent<Rigidbody2D>().AddForce(transform.right * projectileSpeed);
-
-    //    coolDown = Time.time + attackSpeed;
-    //}
-
-    //void FireMax()
-    //{
-    //    Rigidbody2D playerProjectile = Instantiate(playerProjectilePrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-
-    //    playerProjectile.GetComponent<Rigidbody2D>().AddForce(transform.right * projectileSpeed);
-
-    //    coolDown = Time.time + attackSpeed;
-    //}
-
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +16,7 @@ public class PlayerProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector2.right * Time.deltaTime * 20);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
