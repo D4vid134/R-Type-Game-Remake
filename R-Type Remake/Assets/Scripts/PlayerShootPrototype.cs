@@ -19,7 +19,21 @@ public class PlayerShootPrototype : ShootPrototype
     public bool hasSnake = false;
     public bool hasRocket = false;
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PowerUp"))
+        {
+            hasSnake = true;
+            // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
+
+        if (collision.gameObject.CompareTag("PowerUpLaser"))
+        {
+            hasLaser = true;
+            // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
+
+    }
     
     void Update()
     {

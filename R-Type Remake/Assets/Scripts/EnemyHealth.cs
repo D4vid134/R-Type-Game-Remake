@@ -7,8 +7,6 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     public int health = 100;
 
-    public float destroyTimer = 2;
-
     // Start is called before the first frame update
     void Start()
     {

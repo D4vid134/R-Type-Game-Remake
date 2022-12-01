@@ -11,7 +11,7 @@ public class EnemyShootPrototype : ShootPrototype
     // Start is called before the first frame update
     void Start()
     {
-        timer = Random.Range(6f, 17.0f);
+        timer = Random.Range(1f, 7.0f);
     }
 
     // Update is called once per frame
@@ -19,11 +19,10 @@ public class EnemyShootPrototype : ShootPrototype
     {
         timer =  timer - Time.deltaTime*1;
 
-
         if (timer <= 0) 
         {
             Shoot(this.gameObject, enemyProjectile);
-            timer = Random.Range(10f, 24.0f);
+            timer = Random.Range(3f, 8.0f);
         }
 
     }
